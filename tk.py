@@ -1,11 +1,14 @@
 from tkinter import *
 
 def btclick():
-    num1 = int(en.get())
-    num2 = int(en2.get())
+    if(str(en.get()).isnumeric() and str(en2.get()).isnumeric()):
+        num1 = int(en.get())
+        num2 = int(en2.get())
 
-    lb["text"] = num1 + num2
-    
+        lb["text"] = num1 + num2
+    else:
+        lb["text"] = "Valores informados invalidos"
+        
 janela = Tk()
 en = Entry(janela)
 en.place(x=100, y=100)
